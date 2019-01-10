@@ -2,7 +2,6 @@ import sys
 from beziers.path.representations.Segment import SegmentRepresentation
 from beziers.utils.intersectionsmixin import Intersection
 import logging
-import pyclipper
 from beziers.line import Line
 from beziers.point import Point
 
@@ -80,6 +79,7 @@ class BooleanOperationsMixin:
     self.activeRepresentation = SegmentRepresentation(self,newsegs)
 
   def clip(self,clip,cliptype):
+    import pyclipper
     splitlist1 = []
     splitlist2 = []
     intersections = {}
